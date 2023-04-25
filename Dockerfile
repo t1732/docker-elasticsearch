@@ -1,4 +1,13 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:6.3.2
-MAINTAINER sqrt3 <oo1732oo@gmail.com>
+# ============
+# elasticsearch
+# ============
+FROM docker.elastic.co/elasticsearch/elasticsearch:8.7.0 as elastic
 
 RUN elasticsearch-plugin install analysis-kuromoji
+
+# ============
+# opensearch
+# ============
+FROM public.ecr.aws/opensearchproject/opensearch:2.6.0 as open
+
+RUN opensearch-plugin install analysis-kuromoji
