@@ -3,11 +3,13 @@
 build elasticsearch image
 
 ```sh
-docker build --target elastic -t elasticsearch:8.7.0 ./
+docker build -t elasticsearch:6.8.23 ./
 ```
 
-build opensearch image
+## Dockerfile
 
-```sh
-docker build --target open -t opensearch:2.6.0 ./
-```
+Location of the Dockerfile usedLocation of the Dockerfile used
+
+https://github.com/blacktop/docker-elasticsearch-alpine/tree/master/6.8
+
+Borrowed for multi-architect builds
